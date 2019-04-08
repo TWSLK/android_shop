@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_weight="2"
+        android:layout_height="40dp"
+        android:layout_marginLeft="30px"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_item_notice_title"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text=" "/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_item_notice_time"
+        android:layout_width="0px"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="10sp"
+
+        android:textColorLink="@color/black"
+        android:text="2019-01-01 12:00"/>
+
+</LinearLayout>
