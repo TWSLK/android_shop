@@ -73,19 +73,14 @@ public class RegistActivity extends AppCompatActivity {
 
             User user = new User(username, password,nickname);
             regist(user);
-            //user.save();
-           // Toast.makeText(RegistActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
+
         }
     }
 
     private void regist(User user) {
         OkHttpClient okHttpClient = new OkHttpClient();
-        //String url=Url.url+"username=telangpu&password=1111";
         String url = new Url().url +
-                "/Api/Index/Regist?username=" + user.getUsername() +
+                "/Regist?username=" + user.getUsername() +
                 "&password=" + user.getPassword()+
                 "&nickname=" + user.getNickname();
         Log.i(TAG, "url: " + url);
@@ -102,7 +97,6 @@ public class RegistActivity extends AppCompatActivity {
                 Toast.makeText(RegistActivity.this, "网络错误", Toast.LENGTH_LONG).show();
                 Looper.loop();
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String ajax = response.body().string();
@@ -112,14 +106,13 @@ public class RegistActivity extends AppCompatActivity {
                 if (ajaxe.getStatus() > 0) {
                     Looper.prepare();
                     Toast.makeText(RegistActivity.this, ajaxe.getMsg(), Toast.LENGTH_LONG).show();
-                    handler.sendEmptyMessage(1);
+                    //handler.sendEmptyMessage(1);
                     Looper.loop();
                 } else {
                     Looper.prepare();
                     Toast.makeText(RegistActivity.this, ajaxe.getMsg(), Toast.LENGTH_LONG).show();
                     Looper.loop();
                 }
-//                Log.d(TAG, "user: " + user.toString());
             }
         });
     }

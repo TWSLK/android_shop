@@ -9,6 +9,8 @@ public class Goods implements Serializable {
     private String description;
     private String address;
     private String image;
+    private String state;
+    private String type;
 
     public Goods( ) {
     }
@@ -18,6 +20,22 @@ public class Goods implements Serializable {
         this.price = price;
         this.description = description;
         this.address = address;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getImage() {

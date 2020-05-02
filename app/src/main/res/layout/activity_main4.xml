@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Main1Activity"
     android:background="@color/colorPrimary">
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="99px"
-        android:text="校园清道夫"
+        android:text="卖家入口"
+
         android:layout_alignParentTop="true"
         android:textSize="20sp"
         android:height="35sp"
@@ -19,16 +20,119 @@
         android:layout_height="1px"
         android:layout_marginTop="99px"
         android:background="@color/gray1dp" />
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="102px"
         android:layout_marginBottom="102px"
         android:background="@color/white"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_sell_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:hint="    请输入名称"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray1dp" />
+            <EditText
+                android:id="@+id/et_sell_price"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:hint="    请输入价格"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray1dp" />
+            <Spinner
+                android:id="@+id/sp_sell_type"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray1dp" />
+            <EditText
+                android:id="@+id/et_sell_address"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:hint="    请输入交易地点"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray1dp" />
+            <EditText
+                android:id="@+id/et_sell_descriptoin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="16sp"
+                android:hint="    请输入简介"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300px"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/bt_sell_pick1"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40px"
+                    android:text="选择图片1"
+                    android:textColor="@color/snow"
+                    android:textSize="20sp"
+                    android:background="@drawable/corner_blue"/>
+                <ImageView
+                    android:id="@+id/iv_sell"
+                    android:layout_width="0px"
+                    android:layout_weight="2"
+                    android:layout_height="300px" />
+                <!--<Button
+                    android:id="@+id/bt_sell_pick2"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40px"
+                    android:text="选择图片2"
+                    android:textColor="@color/snow"
+                    android:textSize="20sp"
+                    />
+                <Button
+                    android:id="@+id/bt_sell_pick3"
+                    android:layout_width="0px"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40px"
+                    android:text="选择图片3"
+                    android:textColor="@color/snow"
+                    android:textSize="20sp"
+                    />-->
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bt_sell_add"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="40px"
+                android:layout_marginRight="40px"
+                android:layout_marginTop="40px"
+                android:text="确认"
+                android:textColor="@color/snow"
+                android:textSize="20sp"
+                android:background="@drawable/corner_blue" />
+        </LinearLayout>
 
 
-    </LinearLayout>
+    </ScrollView>
 
 
 
@@ -84,7 +188,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/user_p"/>
+                    android:src="@mipmap/user"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,7 +236,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/sell"/>
+                    android:src="@mipmap/sell_p"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

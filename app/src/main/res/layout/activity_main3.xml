@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Main1Activity"
     android:background="@color/colorPrimary">
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="99px"
-        android:text="校园清道夫"
+        android:text="我的收藏"
         android:layout_alignParentTop="true"
         android:textSize="20sp"
         android:height="35sp"
@@ -26,30 +26,11 @@
         android:layout_marginBottom="102px"
         android:background="@color/white"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100px"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <EditText
-                android:id="@+id/et_main_search"
-                android:layout_width="0px"
-                android:layout_weight="3"
-                android:layout_height="match_parent"
-                android:hint="请输入内容搜索"/>
-            <Button
-                android:id="@+id/bt_main_search"
-                android:layout_width="0px"
-                android:layout_weight="1"
-                android:text="搜索"
-                android:layout_margin="20px"
-                android:layout_height="80px" />
-
-        </LinearLayout>
         <ListView
-            android:id="@+id/lv_main"
+            android:id="@+id/lv_select"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
+
 
     </LinearLayout>
 
@@ -83,7 +64,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/home_p"/>
+                    android:src="@mipmap/home"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -131,7 +112,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/star"/>
+                    android:src="@mipmap/star_p"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

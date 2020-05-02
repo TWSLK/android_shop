@@ -23,6 +23,6 @@ public class SplashActivity extends AppCompatActivity {
                 return false;
             }
         }).sendEmptyMessageDelayed(0, 1000); //表示延时三秒进行任务的执行
-       // Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+       // Intent intent=new Intent(SplashActivity.this,Main1Activity.class);
     }
 }

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Main1Activity"
     android:background="@color/colorPrimary">
     <TextView
         android:layout_width="fill_parent"
@@ -14,11 +14,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:background="@color/colorPrimary"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="99px"
-        android:background="@color/gray1dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,10 +33,7 @@
                 android:orientation="vertical">
 
             </TextView>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/gray1dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200px"
@@ -52,6 +45,7 @@
                     android:layout_height="0px"
                     android:layout_weight="1"
                     android:textSize="16sp"
+                    android:text="2222"
                     android:hint="    请输入账号"/>
                 <View
                     android:layout_width="match_parent"
@@ -62,6 +56,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="0px"
                     android:layout_weight="1"
+                    android:text="2222"
+                    android:inputType="textPassword"
                     android:textSize="16sp"
                     android:hint="    请输入密码"/>
             </LinearLayout>
@@ -77,7 +73,7 @@
                 android:text="登录"
                 android:textColor="@color/snow"
                 android:textSize="20sp"
-                android:background="@color/colorPrimary"/>
+                android:background="@drawable/corner_blue"/>
             <Button
                 android:id="@+id/bt_login_regist"
                 android:layout_width="match_parent"
@@ -87,7 +83,7 @@
                 android:text="注册"
                 android:textColor="@color/snow"
                 android:textSize="20sp"
-                android:background="@color/colorPrimary" />
+                android:background="@drawable/corner_blue" />
 
 
         </LinearLayout>

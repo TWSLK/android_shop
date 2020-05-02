@@ -9,7 +9,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_margin="5dp"
-        android:background="@mipmap/avtor"/>
+        android:src="@mipmap/avtor"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:text="名称"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/orange"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_margin="5px"/>
         <TextView
             android:id="@+id/tv_igoods_2"

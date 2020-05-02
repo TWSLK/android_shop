@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, Main1Activity.class);
                 startActivity(intent);
                 finish();
             }
@@ -60,54 +60,57 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.bt_login_login)
     public void onBtLoginLoginClicked() {
-        //------------------------------------------------
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
 
-//        OkHttpClient okHttpClient = new OkHttpClient();
-//        //String url=Url.url+"username=telangpu&password=1111";
-//        String url = new Url().url + "/Api/Index/Login?username=" + etLoginUsername.getText().toString() + "&password=" + etLoginPassword.getText().toString();
-//        final Request request = new Request.Builder()
-//                .url(url)
-//                .get()//默认就是GET请求，可以不写
-//                .build();
-//        Call call = okHttpClient.newCall(request);
-//        call.enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.i(TAG, "onFailure: " + e.getMessage() + e.toString());
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                String ajax = response.body().string();
-//                Log.i(TAG, "onResponse: " + ajax);
-//                Gson gson = new Gson();
-//                User user = gson.fromJson(ajax, User.class);
-//                if (user.getId() > 0) {
-//                    SharedPreferences sharedPreferences = getSharedPreferences("taojinzhe", Context.MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.putString("username", user.getUsername());
-//                    editor.putString("nickname", user.getNickname());
-//                    editor.putInt("userid", user.getId());
-//                    editor.putString("phone", user.getPhone());
-//                    editor.putString("password", user.getPassword());
-//                    editor.putString("realname", user.getRealname());
-//                    editor.putString("zhifubao", user.getZhifubao());
-//                    editor.commit();
-//                    Looper.prepare();
-//                    Toast.makeText(LoginActivity.this, "登录成功" + user.toString(), Toast.LENGTH_LONG).show();
-//                    handler.sendEmptyMessage(1);
-//                    Looper.loop();
-//                } else {
-//                    Looper.prepare();
-//                    Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_LONG).show();
-//                    Looper.loop();
-//                }
-////                Log.d(TAG, "user: " + user.toString());
-//            }
-//        });
+
+        OkHttpClient okHttpClient = new OkHttpClient();
+        String url = new Url().url + "Login?username=" + etLoginUsername.getText().toString() + "&password=" + etLoginPassword.getText().toString();
+        final Request request = new Request.Builder()
+                .url(url)
+                .get()//默认就是GET请求，可以不写
+                .build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i(TAG, "连接失败: " + e.getMessage() + e.toString());
+                Looper.prepare();
+                Toast.makeText(LoginActivity.this, "连接失败"+ e.getMessage() + e.toString(), Toast.LENGTH_LONG).show();
+                Looper.loop();
+            }
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String ajax = response.body().string();
+                Log.i(TAG, "onResponse: " + ajax);
+                Gson gson = new Gson();
+                try{
+                    User user = gson.fromJson(ajax, User.class);
+                    if (user.getId() > 0) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("bear", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("username", user.getUsername());
+                        editor.putString("nickname", user.getNickname());
+                        editor.putInt("userid", user.getId());
+                        editor.putString("phone", user.getPhone());
+                        editor.putString("password", user.getPassword());
+                        editor.putString("realname", user.getRealname());
+                        editor.commit();
+                        Looper.prepare();
+                        Toast.makeText(LoginActivity.this, "登录成功" + user.toString(), Toast.LENGTH_LONG).show();
+                        handler.sendEmptyMessage(1);
+                        Looper.loop();
+                    } else {
+                        Looper.prepare();
+                        Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
+                }catch (Exception e){
+                    Looper.prepare();
+                    Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_LONG).show();
+                    Looper.loop();
+                }
+
+            }
+        });
 
 
     }

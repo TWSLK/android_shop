@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6074e7</color>
-    <color name="colorPrimaryDark">#3d85de</color>
+    <color name="colorPrimary">#619df1</color>
+    <color name="colorPrimaryDark">#48aeed</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorMain">#368bfa</color>
-    <color name="colorButton">#577df7</color>
+    <color name="colorMain">#60adec</color>
+    <color name="colorButton">#5da5ec</color>
     <color name="background">#EEEFF3</color><!--背景 -->
     <color name="backgroundtv">#FFFFFF</color><!--tv背景 -->
     <color name="titletv">#F7F7F7</color><!--title背景-->

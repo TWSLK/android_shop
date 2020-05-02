@@ -2,18 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="99px"
-        android:text="卖家入口"
-        android:layout_alignParentTop="true"
-        android:textSize="20sp"
-        android:height="35sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+    tools:context=".Main1Activity"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="99px">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="99px"
+            android:text="@string/app_name"
+            android:layout_alignParentTop="true"
+            android:textSize="20sp"
+            android:height="35sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/bt_mian1_tuijian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐列表"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10px"/>
+    </RelativeLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -22,11 +35,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="102px"
-        android:layout_marginBottom="102px"
+        android:layout_marginTop="101px"
+        android:layout_marginBottom="101px"
         android:background="@color/white"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <Spinner
+                android:id="@+id/sp_mian"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
 
+            </Spinner>
+            <EditText
+                android:id="@+id/et_main_search"
+                android:background="@color/snow"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:layout_height="70px"
+                android:layout_marginLeft="20px"
+                android:hint=""/>
+            <Button
+                android:id="@+id/bt_main_search"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="搜索"
+                android:layout_margin="20px"
+                android:layout_height="70px"
+                android:background="@drawable/corner_blue"/>
+
+        </LinearLayout>
+        <ListView
+            android:id="@+id/lv_main"
+            android:layout_marginTop="10px"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
 
     </LinearLayout>
 
@@ -60,7 +107,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/home"/>
+                    android:src="@mipmap/home_p"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,7 +179,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="5dip"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/sell_p"/>
+                    android:src="@mipmap/sell"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
